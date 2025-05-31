@@ -1,25 +1,21 @@
 package com.github.sawafrolov.authservice.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * DTO для ответа эндпоинта /hello
  */
-@Getter
+@Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class HelloResponseDto {
 
     /**
      * Ответ эндпоинта /hello
      */
     private String response;
-
-    /**
-     * Конструктор DTO для ответа эндпоинта /hello
-     * @param username Имя пользователя
-     */
-    public HelloResponseDto(String username) {
-        response = String.format("Hello, %s!", username);
-    }
 }
