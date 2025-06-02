@@ -4,13 +4,16 @@ spring:
   security:
     oauth2:
       client:
-        provider:
-          keycloak:
-            issuer-uri: http://localhost:8080/realms/test-realm
         registration:
-          keycloak:
+          gateway:
+            scope: openid
+            provider: keycloak
             client-id: spring-boot-app
             client-secret: NjOCc8iy4pJFJ9bmX92HQaKYKbdBBjHL
+        provider:
+          keycloak:
+            user-name-attribute: preferred_username
+            issuer-uri: http://localhost:8080/realms/test-realm
 
 server:
   port: 8081
