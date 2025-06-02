@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: auth-service
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/test-realm
+        registration:
+          keycloak:
+            client-id: spring-boot-app
+            client-secret: NjOCc8iy4pJFJ9bmX92HQaKYKbdBBjHL
+
+server:
+  port: 8081
